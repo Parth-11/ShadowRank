@@ -1,6 +1,7 @@
 import 'package:architect_system_app/components/background.dart';
 import 'package:architect_system_app/components/button.dart';
 import 'package:architect_system_app/components/text_box.dart';
+import 'package:architect_system_app/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -56,7 +57,9 @@ class LoginPage extends StatelessWidget {
             const TextBox(),
             Button(
               buttonText: 'Login',
-              onPress: () {},
+              onPress: () {
+                Navigator.popAndPushNamed(context, MainScreen.id);
+              },
             )
           ],
         ),

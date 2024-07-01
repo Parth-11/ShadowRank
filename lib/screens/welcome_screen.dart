@@ -1,4 +1,5 @@
 import 'package:architect_system_app/screens/login_page.dart';
+import 'package:architect_system_app/screens/registration_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:architect_system_app/components/button.dart';
@@ -54,7 +55,9 @@ class WelcomeScreen extends StatelessWidget {
                         left: 160,
                         child: Button(
                           buttonText: 'Register',
-                          onPress: () {},
+                          onPress: () {
+                            Navigator.pushNamed(context, RegistrationPage.id);
+                          },
                         ),
                       ),
                       Button(

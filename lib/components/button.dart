@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class Button extends StatelessWidget {
   final Function()? onPress;
   final String buttonText;
-  Color? buttonColor;
+  final Color? buttonColor;
 
-  Button({
+  const Button({
     super.key,
     required this.buttonText,
     required this.onPress,
