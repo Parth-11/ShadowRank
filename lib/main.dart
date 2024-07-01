@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:architect_system_app/screens/welcome_screen.dart';
 import 'package:architect_system_app/screens/login_page.dart';
 import 'package:architect_system_app/screens/registration_page.dart';
-import 'package:architect_system_app/screens/main_screen.dart';
+import 'package:architect_system_app/screens/main_page.dart';
 
 void main() {
   runApp(const MyApp());
