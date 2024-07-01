@@ -1,4 +1,6 @@
+import 'package:architect_system_app/components/background.dart';
 import 'package:flutter/material.dart';
+import 'package:architect_system_app/screens/profile_page.dart';
 
 class MainScreen extends StatefulWidget {
   static const String id = 'Main Screen';
@@ -16,33 +18,42 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
-  static const List<Widget> _pages = [Column(), Column(), Column()];
+  static const List<Widget> _pages = [
+    Column(),
+    Column(),
+    ProfilePage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages.elementAt(_selectedIndex),
-      bottomNavigationBar: BottomNavigationBar(
+    return Container(
+      decoration: background,
+      child: Scaffold(
         backgroundColor: Colors.transparent,
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.cyan.shade700,
-        onTap: _selectionBottomNavigation,
-        items: [
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.track_changes_outlined),
-            label: 'Quest',
-            backgroundColor: Colors.lightBlueAccent.shade200,
-          ),
-          BottomNavigationBarItem(
-              icon: const Icon(Icons.line_style_outlined),
-              label: 'Attributes',
-              backgroundColor: Colors.lightBlueAccent.shade200),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.person),
-            label: 'Profile',
-            backgroundColor: Colors.lightBlueAccent.shade200,
-          ),
-        ],
+        body: _pages.elementAt(_selectedIndex),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.transparent,
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.cyan.shade700,
+          unselectedItemColor: Colors.blueGrey.shade400,
+          onTap: _selectionBottomNavigation,
+          items: [
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.track_changes_outlined),
+              label: 'Quest',
+              backgroundColor: Colors.lightBlueAccent.shade200,
+            ),
+            BottomNavigationBarItem(
+                icon: const Icon(Icons.line_style_outlined),
+                label: 'Status',
+                backgroundColor: Colors.lightBlueAccent.shade200),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.person),
+              label: 'Profile',
+              backgroundColor: Colors.lightBlueAccent.shade200,
+            ),
+          ],
+        ),
       ),
     );
   }

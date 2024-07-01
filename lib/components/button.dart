@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  final Function()? onPress;
+  final Function() onPress;
   final String buttonText;
   final Color? buttonColor;
 
