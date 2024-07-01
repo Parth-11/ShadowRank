@@ -1,27 +1,22 @@
+import 'package:architect_system_app/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:architect_system_app/components/button.dart';
+import 'package:architect_system_app/components/background.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  static const String id = 'Welcome Screen';
   const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: AlignmentDirectional.bottomEnd,
-              end: Alignment.topCenter,
-              colors: [
-                HexColor('#0a1543'),
-                HexColor('#1b45d7'),
-              ]),
-        ),
+        decoration: background,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               //Image hover over Avatar
               Stack(
@@ -48,20 +43,6 @@ class WelcomeScreen extends StatelessWidget {
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus volutpat bibendum. Phasellus condimentum arcu sit amet nibh convallis mattis. Duis orci dui, bibendum in ultricies at, ultricies rhoncus lorem. Fusce et dignissim nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"),
                 ],
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Button(
-              //       buttonText: 'Login',
-              //       onPress: () {},
-              //       buttonColor: Colors.cyan,
-              //     ),
-              //     Button(
-              //       buttonText: 'Register',
-              //       onPress: () {},
-              //     ),
-              //   ],
-              // ),
               SizedBox(
                 width: double.infinity,
                 child: Padding(
@@ -78,7 +59,9 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       Button(
                         buttonText: 'Login',
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.pushNamed(context, LoginPage.id);
+                        },
                         buttonColor: Colors.cyan,
                       ),
                     ],
