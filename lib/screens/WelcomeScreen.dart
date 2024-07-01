@@ -48,23 +48,42 @@ class WelcomeScreen extends StatelessWidget {
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus volutpat bibendum. Phasellus condimentum arcu sit amet nibh convallis mattis. Duis orci dui, bibendum in ultricies at, ultricies rhoncus lorem. Fusce et dignissim nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Button(
-                      buttonText: 'Login',
-                      onPress: () {},
-                      buttonColor: Colors.cyan,
-                    ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Button(
+              //       buttonText: 'Login',
+              //       onPress: () {},
+              //       buttonColor: Colors.cyan,
+              //     ),
+              //     Button(
+              //       buttonText: 'Register',
+              //       onPress: () {},
+              //     ),
+              //   ],
+              // ),
+              SizedBox(
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Stack(
+                    alignment: Alignment.centerLeft,
+                    children: [
+                      Positioned(
+                        left: 160,
+                        child: Button(
+                          buttonText: 'Register',
+                          onPress: () {},
+                        ),
+                      ),
+                      Button(
+                        buttonText: 'Login',
+                        onPress: () {},
+                        buttonColor: Colors.cyan,
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: Button(
-                      buttonText: 'Register',
-                      onPress: () {},
-                    ),
-                  ),
-                ],
+                ),
               )
             ],
           ),
