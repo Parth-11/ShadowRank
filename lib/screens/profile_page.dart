@@ -10,7 +10,12 @@ class ProfilePage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         const CircleAvatar(),
-        const Text('Name'),
+        const Text(
+          'Name',
+          style:TextStyle(
+            fontSize: 25,
+          ),
+          ),
         const Text('Email'),
         const Text('Age'),
         const Text('Highest attribute'),
