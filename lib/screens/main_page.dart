@@ -19,9 +19,9 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   static const List<Widget> _pages = [
-    Column(),
-    Column(),
     ProfilePage(),
+    Column(),
+    Column(),
   ];
 
   @override
@@ -39,6 +39,11 @@ class _MainScreenState extends State<MainScreen> {
           onTap: _selectionBottomNavigation,
           items: [
             BottomNavigationBarItem(
+              icon: const Icon(Icons.person),
+              label: 'Profile',
+              backgroundColor: Colors.lightBlueAccent.shade200,
+            ),
+            BottomNavigationBarItem(
               icon: const Icon(Icons.track_changes_outlined),
               label: 'Quest',
               backgroundColor: Colors.lightBlueAccent.shade200,
@@ -47,11 +52,6 @@ class _MainScreenState extends State<MainScreen> {
                 icon: const Icon(Icons.line_style_outlined),
                 label: 'Status',
                 backgroundColor: Colors.lightBlueAccent.shade200),
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.person),
-              label: 'Profile',
-              backgroundColor: Colors.lightBlueAccent.shade200,
-            ),
           ],
         ),
       ),
