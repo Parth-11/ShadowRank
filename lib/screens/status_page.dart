@@ -39,7 +39,7 @@ class StatusPage extends StatelessWidget {
                   const Text(
                     "STATUS",
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 35,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       shadows: [
@@ -51,7 +51,49 @@ class StatusPage extends StatelessWidget {
                       ],
                     ),
                   ),
+
+                 
+                  const Column(
+                    children: [
+                      Text(
+                        "5",
+                        style: TextStyle(
+                          fontSize: 48,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          shadows: [
+                            Shadow(
+                              blurRadius: 25.0,
+                              offset: Offset(0, 0),
+                              color: Colors.blue,
+                            ),
+                          ],
+                      
+                        ),
+                      
+                      ),
+                      Text(
+                        "LEVEL",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          shadows: [
+                            Shadow(
+                              blurRadius: 25.0,
+                              offset: Offset(0, 0),
+                              color: Colors.blue,
+                            ),
+                          ],
+                      
+                        ),
+                      
+                      ),
+                    ],
+                  ),
                   const SizedBox(height: 30),
+                  
+                  
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
