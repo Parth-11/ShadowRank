@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 
 class StatusPage extends StatelessWidget {
+  static const String id = 'Status Page';
   const StatusPage({super.key});
 
   @override
