@@ -12,8 +12,10 @@ class ProfilePage extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/profilePage_bg.png')),
+          // image: DecorationImage(
+          //   image: AssetImage('assets/images/profilePage_bg.png'),
+          // ),
+          color: Colors.black,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -83,10 +85,116 @@ class ProfilePage extends StatelessWidget {
                         strokeWidth: 3,
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                children: [
+                  Container(
+                    height: 40,
+                    width: 160,
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadiusDirectional.all(
+                        Radius.circular(20),
+                      ),
+                      color: HexColor('4355F5').withOpacity(0.28),
+                    ),
+                    child: const Center(
+                      child: StrokeText(
+                        text: 'Age',
+                        textStyle: TextStyle(
+                          fontFamily: 'Solo Level',
+                          fontSize: 20,
+                        ),
+                        strokeColor: Colors.black,
+                        strokeWidth: 3,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    height: 40,
+                    width: 160,
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadiusDirectional.all(
+                        Radius.circular(20),
+                      ),
+                      color: HexColor('4355F5').withOpacity(0.28),
+                    ),
+                    child: const Center(
+                      child: StrokeText(
+                        text: 'Email',
+                        textStyle: TextStyle(
+                          fontFamily: 'Solo Level',
+                          fontSize: 20,
+                        ),
+                        strokeColor: Colors.black,
+                        strokeWidth: 3,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 150,
+              width: 390,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: HexColor('4355F5').withOpacity(0.28),
+              ),
+              child: Column(
+                children: [
+                  //Text part
+                  Padding(
+                    padding: const EdgeInsets.only(left: 12),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const StrokeText(
+                          text: 'Friends',
+                          textStyle: TextStyle(
+                            fontFamily: 'Solo Level',
+                            fontSize: 20,
+                          ),
+                          strokeColor: Colors.black,
+                          strokeWidth: 3,
+                        ),
+                        const Spacer(),
+                        MaterialButton(
+                          onPressed: () {},
+                          child: const Row(
+                            children: [
+                              StrokeText(
+                                text: 'See All',
+                                textStyle: TextStyle(
+                                  fontFamily: 'Solo Level',
+                                  fontSize: 20,
+                                ),
+                                strokeColor: Colors.black,
+                                strokeWidth: 3,
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_rounded,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Divider(
+                    color: Colors.white,
+                  ),
+                  //Friends avatar
+                  const Row(),
+                ],
+              ),
+            )
           ],
         ),
       ),
