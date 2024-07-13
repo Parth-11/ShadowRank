@@ -1,9 +1,9 @@
 import 'package:architect_system_app/components/ProfilePage/detail_box.dart';
+import 'package:architect_system_app/components/ProfilePage/friend_avatar.dart';
+import 'package:architect_system_app/components/ProfilePage/profile_text.dart';
 import 'package:architect_system_app/components/ProfilePage/text_container.dart';
-import 'package:architect_system_app/constants/ProfilePage/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:stroke_text/stroke_text.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -37,9 +37,14 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
-            const CircleAvatar(
-              radius: 80,
-              child: Image(image: AssetImage('assets/images/Avatar.png')),
+            GestureDetector(
+              onTap: () {
+                //change the profile avatar
+              },
+              child: const CircleAvatar(
+                radius: 80,
+                child: Image(image: AssetImage('assets/images/Avatar.png')),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 12.0),
@@ -54,42 +59,24 @@ class ProfilePage extends StatelessWidget {
                 ),
                 child: const Column(
                   children: [
-                    StrokeText(
-                      text: 'Sun Jin Woo',
-                      textStyle: TextStyle(
-                        fontFamily: 'Solo Level',
-                        fontSize: 30,
-                        color: Colors.white,
-                      ),
-                      strokeColor: Colors.black,
-                      strokeWidth: 3,
+                    ProfileText(
+                      content: 'Sun Jin Woo',
+                      size: 30,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        StrokeText(
-                          text: 'Level',
-                          textStyle: TextStyle(
-                            fontFamily: 'Solo Level',
-                            fontSize: 30,
-                            color: Colors.white,
-                          ),
-                          strokeColor: Colors.black,
-                          strokeWidth: 3,
+                        ProfileText(
+                          content: 'Level',
+                          size: 30,
                         ),
                         SizedBox(
                           width: 15,
                         ),
-                        StrokeText(
-                          text: '20',
-                          textStyle: TextStyle(
-                            fontFamily: 'Solo Level',
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                          strokeColor: Colors.black,
-                          strokeWidth: 3,
-                        )
+                        ProfileText(
+                          content: '20',
+                          size: 20,
+                        ),
                       ],
                     ),
                   ],
@@ -123,25 +110,18 @@ class ProfilePage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        const StrokeText(
-                          text: 'Friends',
-                          textStyle: style1,
-                          strokeColor: Colors.black,
-                          strokeWidth: 3,
+                        const ProfileText(
+                          content: 'Friends',
+                          size: 20,
                         ),
                         const Spacer(),
                         MaterialButton(
                           onPressed: () {},
                           child: const Row(
                             children: [
-                              StrokeText(
-                                text: 'See All',
-                                textStyle: TextStyle(
-                                  fontFamily: 'Solo Level',
-                                  fontSize: 20,
-                                ),
-                                strokeColor: Colors.black,
-                                strokeWidth: 3,
+                              ProfileText(
+                                content: 'See All',
+                                size: 20,
                               ),
                               Icon(
                                 Icons.arrow_forward_ios_rounded,
@@ -162,6 +142,10 @@ class ProfilePage extends StatelessWidget {
                     children: [
                       FriendAvatar(
                         tap: () {},
+                        avatar: const Image(
+                          image: AssetImage('assets/images/Avatar.png'),
+                        ),
+                        friendName: 'Name',
                       ),
                       GestureDetector(
                         child: const CircleAvatar(
@@ -197,22 +181,26 @@ class ProfilePage extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 20),
-                  child: StrokeText(
-                    text: 'Details',
-                    textStyle: TextStyle(
-                      fontFamily: 'Solo Level',
-                      fontSize: 20,
-                    ),
-                    strokeColor: Colors.black,
-                    strokeWidth: 3,
+                  child: ProfileText(
+                    content: 'Details',
+                    size: 20,
                   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    DetailBox(),
-                    DetailBox(),
-                    DetailBox(),
+                    DetailBox(
+                      heading: 'Highetst Attribute',
+                      content: 'Intelligence 20',
+                    ),
+                    DetailBox(
+                      heading: 'Quest Completed',
+                      content: '10',
+                    ),
+                    DetailBox(
+                      heading: 'Penalty Quest',
+                      content: '5',
+                    ),
                   ],
                 )
               ],
@@ -220,33 +208,6 @@ class ProfilePage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class FriendAvatar extends StatelessWidget {
-  final Function() tap;
-
-  const FriendAvatar({super.key, required this.tap});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        GestureDetector(
-          onTap: tap,
-          child: const CircleAvatar(
-            radius: 40,
-            child: Image(
-              image: AssetImage('assets/images/Avatar.png'),
-            ),
-          ),
-        ),
-        const StrokeText(
-          text: 'Name',
-          textStyle: style1,
-        )
-      ],
     );
   }
 }
