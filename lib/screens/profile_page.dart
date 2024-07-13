@@ -1,3 +1,4 @@
+import 'package:architect_system_app/components/ProfilePage/detail_box.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:stroke_text/stroke_text.dart';
@@ -34,59 +35,62 @@ class ProfilePage extends StatelessWidget {
                   ),
                 )),
             const CircleAvatar(
-              radius: 120,
+              radius: 100,
               child: Image(image: AssetImage('assets/images/Avatar.png')),
             ),
-            Container(
-              height: 90,
-              width: 269,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadiusDirectional.all(
-                  Radius.circular(20),
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: Container(
+                height: 90,
+                width: 269,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadiusDirectional.all(
+                    Radius.circular(20),
+                  ),
+                  color: HexColor('4355F5').withOpacity(0.28),
                 ),
-                color: HexColor('4355F5').withOpacity(0.28),
-              ),
-              child: const Column(
-                children: [
-                  StrokeText(
-                    text: 'Sun Jin Woo',
-                    textStyle: TextStyle(
-                      fontFamily: 'Solo Level',
-                      fontSize: 30,
-                      color: Colors.white,
+                child: const Column(
+                  children: [
+                    StrokeText(
+                      text: 'Sun Jin Woo',
+                      textStyle: TextStyle(
+                        fontFamily: 'Solo Level',
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                      strokeColor: Colors.black,
+                      strokeWidth: 3,
                     ),
-                    strokeColor: Colors.black,
-                    strokeWidth: 3,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      StrokeText(
-                        text: 'Level',
-                        textStyle: TextStyle(
-                          fontFamily: 'Solo Level',
-                          fontSize: 30,
-                          color: Colors.white,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        StrokeText(
+                          text: 'Level',
+                          textStyle: TextStyle(
+                            fontFamily: 'Solo Level',
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                          strokeColor: Colors.black,
+                          strokeWidth: 3,
                         ),
-                        strokeColor: Colors.black,
-                        strokeWidth: 3,
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      StrokeText(
-                        text: '20',
-                        textStyle: TextStyle(
-                          fontFamily: 'Solo Level',
-                          fontSize: 20,
-                          color: Colors.white,
+                        SizedBox(
+                          width: 15,
                         ),
-                        strokeColor: Colors.black,
-                        strokeWidth: 3,
-                      )
-                    ],
-                  ),
-                ],
+                        StrokeText(
+                          text: '20',
+                          textStyle: TextStyle(
+                            fontFamily: 'Solo Level',
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                          strokeColor: Colors.black,
+                          strokeWidth: 3,
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -191,10 +195,71 @@ class ProfilePage extends StatelessWidget {
                     color: Colors.white,
                   ),
                   //Friends avatar
-                  const Row(),
-                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: const CircleAvatar(
+                          radius: 40,
+                          child: Image(
+                            image: AssetImage('assets/images/Avatar.png'),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        child: const CircleAvatar(
+                          radius: 40,
+                          child: Image(
+                            image: AssetImage('assets/images/Avatar.png'),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        child: const CircleAvatar(
+                          radius: 40,
+                          child: Image(
+                            image: AssetImage('assets/images/Avatar.png'),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        child: const CircleAvatar(
+                          radius: 40,
+                          child: Image(
+                            image: AssetImage('assets/images/Avatar.png'),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
+            ),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: StrokeText(
+                    text: 'Details',
+                    textStyle: TextStyle(
+                      fontFamily: 'Solo Level',
+                      fontSize: 20,
+                    ),
+                    strokeColor: Colors.black,
+                    strokeWidth: 3,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    DetailBox(),
+                    DetailBox(),
+                    DetailBox(),
+                  ],
+                )
+              ],
             )
           ],
         ),
