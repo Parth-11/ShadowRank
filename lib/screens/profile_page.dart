@@ -1,4 +1,6 @@
 import 'package:architect_system_app/components/ProfilePage/detail_box.dart';
+import 'package:architect_system_app/components/ProfilePage/text_container.dart';
+import 'package:architect_system_app/constants/ProfilePage/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:stroke_text/stroke_text.dart';
@@ -22,20 +24,21 @@ class ProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Align(
-                alignment: Alignment.topRight,
-                child: Material(
-                  borderRadius: BorderRadius.circular(16.0),
-                  elevation: 10,
-                  color: HexColor('4355F5').withOpacity(0.5),
-                  child: MaterialButton(
-                    onPressed: () {},
-                    height: 40,
-                    minWidth: 20,
-                    child: const Icon(Icons.edit),
-                  ),
-                )),
+              alignment: Alignment.topRight,
+              child: Material(
+                borderRadius: BorderRadius.circular(16.0),
+                elevation: 10,
+                color: HexColor('4355F5').withOpacity(0.5),
+                child: MaterialButton(
+                  onPressed: () {},
+                  height: 40,
+                  minWidth: 20,
+                  child: const Icon(Icons.edit),
+                ),
+              ),
+            ),
             const CircleAvatar(
-              radius: 100,
+              radius: 80,
               child: Image(image: AssetImage('assets/images/Avatar.png')),
             ),
             Padding(
@@ -93,58 +96,20 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
-                  Container(
-                    height: 40,
-                    width: 160,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadiusDirectional.all(
-                        Radius.circular(20),
-                      ),
-                      color: HexColor('4355F5').withOpacity(0.28),
-                    ),
-                    child: const Center(
-                      child: StrokeText(
-                        text: 'Age',
-                        textStyle: TextStyle(
-                          fontFamily: 'Solo Level',
-                          fontSize: 20,
-                        ),
-                        strokeColor: Colors.black,
-                        strokeWidth: 3,
-                      ),
-                    ),
+                  TextContainer(
+                    content: 'Age',
                   ),
-                  const Spacer(),
-                  Container(
-                    height: 40,
-                    width: 160,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadiusDirectional.all(
-                        Radius.circular(20),
-                      ),
-                      color: HexColor('4355F5').withOpacity(0.28),
-                    ),
-                    child: const Center(
-                      child: StrokeText(
-                        text: 'Email',
-                        textStyle: TextStyle(
-                          fontFamily: 'Solo Level',
-                          fontSize: 20,
-                        ),
-                        strokeColor: Colors.black,
-                        strokeWidth: 3,
-                      ),
-                    ),
-                  ),
+                  Spacer(),
+                  TextContainer(content: 'Email')
                 ],
               ),
             ),
             Container(
-              height: 150,
+              height: 175,
               width: 390,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
@@ -160,10 +125,7 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         const StrokeText(
                           text: 'Friends',
-                          textStyle: TextStyle(
-                            fontFamily: 'Solo Level',
-                            fontSize: 20,
-                          ),
+                          textStyle: style1,
                           strokeColor: Colors.black,
                           strokeWidth: 3,
                         ),
@@ -198,14 +160,8 @@ class ProfilePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      GestureDetector(
-                        onTap: () {},
-                        child: const CircleAvatar(
-                          radius: 40,
-                          child: Image(
-                            image: AssetImage('assets/images/Avatar.png'),
-                          ),
-                        ),
+                      FriendAvatar(
+                        tap: () {},
                       ),
                       GestureDetector(
                         child: const CircleAvatar(
@@ -264,6 +220,33 @@ class ProfilePage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class FriendAvatar extends StatelessWidget {
+  final Function() tap;
+
+  const FriendAvatar({super.key, required this.tap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: tap,
+          child: const CircleAvatar(
+            radius: 40,
+            child: Image(
+              image: AssetImage('assets/images/Avatar.png'),
+            ),
+          ),
+        ),
+        const StrokeText(
+          text: 'Name',
+          textStyle: style1,
+        )
+      ],
     );
   }
 }
