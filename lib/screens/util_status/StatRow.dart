@@ -20,7 +20,7 @@ class StatRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            label,
+            label, 
             style: TextStyle(color: Colors.white),
           ),
           Text(
