@@ -192,6 +192,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   //Friends avatar
                   const Row(),
+                  
                 ],
               ),
             )
