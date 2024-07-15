@@ -1,16 +1,14 @@
 import "package:flutter/material.dart";
 
-
-
 class StatRow extends StatelessWidget {
   final String label;
   final int value;
 
   const StatRow({
-    Key? key,
+    super.key,
     required this.label,
     required this.value,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +19,11 @@ class StatRow extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
           Text(
             value.toString(),
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ],
       ),
