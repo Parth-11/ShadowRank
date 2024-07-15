@@ -62,6 +62,21 @@ class LoginPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 decoration: fieldDecoration.copyWith(hintText: 'Password'),
               ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Material(
+                  color: Colors.transparent,
+                  child: MaterialButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Forgot Password',
+                      style: TextStyle(
+                        color: Colors.purple,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Button(
                 buttonText: 'Login',
                 onPress: () {
