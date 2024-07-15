@@ -1,6 +1,6 @@
 import 'package:architect_system_app/components/background.dart';
 import 'package:architect_system_app/components/button.dart';
-import 'package:architect_system_app/components/text_box.dart';
+import 'package:architect_system_app/constants/text_box_const.dart';
 import 'package:architect_system_app/screens/main_page.dart';
 import 'package:flutter/material.dart';
 
@@ -25,9 +25,15 @@ class RegistrationPage extends StatelessWidget {
                   )
                 ],
               ),
-              const TextBox(),
-              const TextBox(),
-              const TextBox(),
+              TextField(
+                decoration: fieldDecoration.copyWith(hintText: 'Email'),
+              ),
+              TextField(
+                decoration: fieldDecoration.copyWith(hintText: 'Username'),
+              ),
+              TextField(
+                decoration: fieldDecoration.copyWith(hintText: 'Password'),
+              ),
               Button(
                 buttonText: 'Register',
                 onPress: () {
