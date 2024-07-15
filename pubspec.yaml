@@ -66,6 +66,11 @@ flutter:
     - assets/images/system_background_image.gif
     - assets/images/status-bg.jpeg
     - assets/images/bg_stats.jpeg
+    - assets/images/logos/agility-logo.png
+    - assets/images/logos/dumbell-logo.png
+    - assets/images/logos/perception-logo.png
+    - assets/images/logos/vit-logo.png
+    - assets/images/logos/int-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

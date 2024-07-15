@@ -6,6 +6,7 @@ import '../screens/util_status/StatRow.dart';
 class StatusPage extends StatelessWidget {
   static const String id = 'Status Page';
 
+  // ignore: use_super_parameters
   const StatusPage({Key? key}) : super(key: key);
 
   @override
@@ -13,7 +14,7 @@ class StatusPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text("Status"),
+        title: const Text("Status"),
       ),
       body: Stack(
         fit: StackFit.expand, // Make the stack take up the whole screen
@@ -122,15 +123,15 @@ class StatusPage extends StatelessWidget {
                     child: Column(
                       children: [
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "STR", value: 30, icon: Icons.favorite),
+                        _buildStatRow(label: "STRENGTH", value: 30, imagePath: "assets/images/logos/dumbell-logo.png"),
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "AGI", value: 20, icon: Icons.favorite),
+                        _buildStatRow(label: "AGILITY", value: 20, imagePath: "assets/images/logos/agility-logo.png"),
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "PER", value: 35, icon: Icons.favorite),
+                        _buildStatRow(label: "PERCEPTION", value: 35, imagePath: "assets/images/logos/perception-logo.png"),
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "VIT", value: 28, icon: Icons.favorite),
+                        _buildStatRow(label: "VIT", value: 28, imagePath: "assets/images/logos/vit-logo.png"),
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "INT", value: 30, icon: Icons.favorite),
+                        _buildStatRow(label: "INTELLIGENCE", value: 30, imagePath: "assets/images/logos/int-logo.png"),
                       ],
                     ),
                   ),
@@ -143,14 +144,12 @@ class StatusPage extends StatelessWidget {
     );
   }
 
-  Widget _buildStatRow({required String label, required int value, required IconData icon}) {
+  Widget _buildStatRow({required String label, required int value, required String imagePath}) {
     return Row(
       children: [
-        Icon(
-          icon,
-          color: Colors.white,
+          Image.asset(imagePath, width: 24, height: 24),
         
-        ),
+        
         const SizedBox(width: 10),
         Expanded(
           child: StatRow(label: label, value: value),
@@ -162,7 +161,7 @@ class StatusPage extends StatelessWidget {
 
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: StatusPage(),
   ));
 }
