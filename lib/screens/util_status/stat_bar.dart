@@ -26,20 +26,6 @@ class _StatBarState extends State<StatBar> {
           widget.label,
           style: const TextStyle(color: Colors.white),
         ),
-        // Stack(
-        //   children: [
-        //     Container(
-        //       width: 200,
-        //       height: 15,
-        //       color: Colors.grey,
-        //     ),
-        //     Container(
-        //       width: (value / maxValue) * 100,
-        //       height: 15,
-        //       color: const Color.fromRGBO(91, 123, 178, 1),
-        //     ),
-        //   ],
-        // ),
         SizedBox(
           height: 15,
           width: 200,
