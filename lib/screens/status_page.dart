@@ -102,32 +102,6 @@ class StatusPage extends StatelessWidget {
                     ),
                     child: const Column(
                       children: [
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "STRENGTH",
-                            value: 29,
-                            imagePath: "assets/images/logos/dumbell-logo.png"),
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "AGILITY",
-                            value: 20,
-                            imagePath: "assets/images/logos/agility-logo.png"),
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "PERCEPTION",
-                            value: 35,
-                            imagePath:
-                                "assets/images/logos/perception-logo.png"),
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "VIT",
-                            value: 28,
-                            imagePath: "assets/images/logos/vit-logo.png"),
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "INTELLIGENCE",
-                            value: 30,
-                            imagePath: "assets/images/logos/int-logo.png"),
                         SizedBox(height: 10),
                         StatRowElement(
                           imagePath: "assets/images/logos/dumbell-logo.png",
