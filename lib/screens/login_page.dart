@@ -1,13 +1,27 @@
+import 'dart:convert';
+
 import 'package:architect_system_app/components/background.dart';
 import 'package:architect_system_app/components/button.dart';
 import 'package:architect_system_app/constants/text_box_const.dart';
 import 'package:architect_system_app/screens/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:http/http.dart' as http;
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   static const id = 'Login Page';
+
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  var url = Uri.parse('http://192.168.29.78:8080/api/v1/player/login');
+
+  String userName = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +69,16 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               TextField(
+                onChanged: (value) {
+                  userName = value;
+                },
                 decoration:
                     fieldDecoration.copyWith(hintText: 'Email or Username'),
               ),
               TextField(
+                onChanged: (value) {
+                  password = value;
+                },
                 textAlign: TextAlign.center,
                 decoration: fieldDecoration.copyWith(hintText: 'Password'),
               ),
@@ -79,8 +99,28 @@ class LoginPage extends StatelessWidget {
               ),
               Button(
                 buttonText: 'Login',
-                onPress: () {
-                  Navigator.popAndPushNamed(context, MainScreen.id);
+                onPress: () async {
+                  try {
+                    var response = await http.post(
+                      url,
+                      headers: <String, String>{
+                        'Content-Type': 'application/json; charset=UTF-8',
+                      },
+                      body: jsonEncode({
+                        'username': userName,
+                        'password': password,
+                      }),
+                    );
+                    if (response.statusCode == 200) {
+                      await Future.delayed(const Duration(seconds: 1));
+                      if (!context.mounted) return;
+                      Navigator.popAndPushNamed(context, MainScreen.id);
+                    } else {
+                      print('Wrong username or password');
+                    }
+                  } catch (e) {
+                    print('Error message is $e');
+                  }
                 },
               )
             ],
