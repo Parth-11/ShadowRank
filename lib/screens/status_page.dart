@@ -1,3 +1,4 @@
+import 'package:architect_system_app/components/StatsPage/stat_page_text.dart';
 import 'package:flutter/material.dart';
 import 'util_status/stat_bar.dart';
 import 'util_status/stat_row.dart';
@@ -37,52 +38,49 @@ class StatusPage extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
-                    "STATUS",
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 25.0,
-                          offset: Offset(0, 0),
-                          color: Colors.blue,
-                        ),
-                      ],
-                    ),
+                  const StatPageText(
+                    content: 'STATUS',
+                    size: 35,
                   ),
                   const Column(
                     children: [
-                      Text(
-                        "5",
-                        style: TextStyle(
-                          fontSize: 48,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          shadows: [
-                            Shadow(
-                              blurRadius: 25.0,
-                              offset: Offset(0, 0),
-                              color: Colors.blue,
-                            ),
-                          ],
-                        ),
+                      // Text(
+                      //   "5",
+                      //   style: TextStyle(
+                      //     fontSize: 48,
+                      //     color: Colors.white,
+                      //     fontWeight: FontWeight.bold,
+                      //     shadows: [
+                      //       Shadow(
+                      //         blurRadius: 25.0,
+                      //         offset: Offset(0, 0),
+                      //         color: Colors.blue,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      StatPageText(
+                        content: '5',
+                        size: 48,
                       ),
-                      Text(
-                        "LEVEL",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          shadows: [
-                            Shadow(
-                              blurRadius: 25.0,
-                              offset: Offset(0, 0),
-                              color: Colors.blue,
-                            ),
-                          ],
-                        ),
+                      // Text(
+                      //   "LEVEL",
+                      //   style: TextStyle(
+                      //     fontSize: 20,
+                      //     color: Colors.white,
+                      //     fontWeight: FontWeight.bold,
+                      //     shadows: [
+                      //       Shadow(
+                      //         blurRadius: 25.0,
+                      //         offset: Offset(0, 0),
+                      //         color: Colors.blue,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      StatPageText(
+                        content: 'LEVEL',
+                        size: 20,
                       ),
                     ],
                   ),
