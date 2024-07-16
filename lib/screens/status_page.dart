@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../screens/util_status/StatBar.dart';
 import '../screens/util_status/StatRow.dart';
 
-
 class StatusPage extends StatelessWidget {
   static const String id = 'Status Page';
 
@@ -32,7 +31,8 @@ class StatusPage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.7),
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: const Color.fromARGB(255, 141, 155, 180)),
+                border:
+                    Border.all(color: const Color.fromARGB(255, 141, 155, 180)),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -52,8 +52,6 @@ class StatusPage extends StatelessWidget {
                       ],
                     ),
                   ),
-
-                 
                   const Column(
                     children: [
                       Text(
@@ -69,9 +67,7 @@ class StatusPage extends StatelessWidget {
                               color: Colors.blue,
                             ),
                           ],
-                      
                         ),
-                      
                       ),
                       Text(
                         "LEVEL",
@@ -86,19 +82,16 @@ class StatusPage extends StatelessWidget {
                               color: Colors.blue,
                             ),
                           ],
-                      
                         ),
-                      
                       ),
                     ],
                   ),
                   const SizedBox(height: 30),
-                  
-                  
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      border: Border.all(color: const Color.fromARGB(255, 146, 153, 166)),
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 146, 153, 166)),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: const Column(
@@ -106,7 +99,10 @@ class StatusPage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            StatBar(label: "REQUIRED POINTS", value: 40, maxValue: 100),
+                            StatBar(
+                                label: "REQUIRED POINTS",
+                                value: 40,
+                                maxValue: 100),
                           ],
                         ),
                       ],
@@ -117,21 +113,38 @@ class StatusPage extends StatelessWidget {
                     height: 220,
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      border: Border.all(color: const Color.fromARGB(255, 170, 183, 206)),
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 170, 183, 206)),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
                       children: [
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "STRENGTH", value: 30, imagePath: "assets/images/logos/dumbell-logo.png"),
+                        _buildStatRow(
+                            label: "STRENGTH",
+                            value: 30,
+                            imagePath: "assets/images/logos/dumbell-logo.png"),
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "AGILITY", value: 20, imagePath: "assets/images/logos/agility-logo.png"),
+                        _buildStatRow(
+                            label: "AGILITY",
+                            value: 20,
+                            imagePath: "assets/images/logos/agility-logo.png"),
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "PERCEPTION", value: 35, imagePath: "assets/images/logos/perception-logo.png"),
+                        _buildStatRow(
+                            label: "PERCEPTION",
+                            value: 35,
+                            imagePath:
+                                "assets/images/logos/perception-logo.png"),
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "VIT", value: 28, imagePath: "assets/images/logos/vit-logo.png"),
+                        _buildStatRow(
+                            label: "VIT",
+                            value: 28,
+                            imagePath: "assets/images/logos/vit-logo.png"),
                         const SizedBox(height: 10),
-                        _buildStatRow(label: "INTELLIGENCE", value: 30, imagePath: "assets/images/logos/int-logo.png"),
+                        _buildStatRow(
+                            label: "INTELLIGENCE",
+                            value: 30,
+                            imagePath: "assets/images/logos/int-logo.png"),
                       ],
                     ),
                   ),
@@ -144,12 +157,11 @@ class StatusPage extends StatelessWidget {
     );
   }
 
-  Widget _buildStatRow({required String label, required int value, required String imagePath}) {
+  Widget _buildStatRow(
+      {required String label, required int value, required String imagePath}) {
     return Row(
       children: [
-          Image.asset(imagePath, width: 24, height: 24),
-        
-        
+        Image.asset(imagePath, width: 24, height: 24),
         const SizedBox(width: 10),
         Expanded(
           child: StatRow(label: label, value: value),
@@ -158,7 +170,6 @@ class StatusPage extends StatelessWidget {
     );
   }
 }
-
 
 void main() {
   runApp(const MaterialApp(
