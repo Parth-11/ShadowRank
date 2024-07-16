@@ -3,6 +3,7 @@ import 'package:architect_system_app/components/ProfilePage/friend_avatar.dart';
 import 'package:architect_system_app/components/ProfilePage/profile_text.dart';
 import 'package:architect_system_app/components/ProfilePage/text_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -12,14 +13,14 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        height: double.infinity,
-        width: double.infinity,
+        
         decoration: const BoxDecoration(
-          // image: DecorationImage(
-          //   image: AssetImage('assets/images/profilePage_bg.png'),
-          // ),
-          color: Colors.black,
+           image: DecorationImage(
+             image: AssetImage('assets/images/profilePage_bg.png'),
+             fit:BoxFit.cover,
+           ),
         ),
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

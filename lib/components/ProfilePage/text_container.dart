@@ -23,7 +23,7 @@ class TextContainer extends StatelessWidget {
           text: content,
           textStyle: const TextStyle(
             fontFamily: 'Solo Level',
-            fontSize: 20,
+            fontSize: 30,
           ),
           strokeColor: Colors.black,
           strokeWidth: 3,
