@@ -1,6 +1,7 @@
+import 'package:architect_system_app/components/StatsPage/stat_page_text.dart';
+import 'package:architect_system_app/components/StatsPage/stat_row_element.dart';
 import 'package:flutter/material.dart';
 import 'util_status/stat_bar.dart';
-import 'util_status/stat_row.dart';
 
 class StatusPage extends StatelessWidget {
   static const String id = 'Status Page';
@@ -37,52 +38,34 @@ class StatusPage extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
-                    "STATUS",
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 25.0,
-                          offset: Offset(0, 0),
-                          color: Colors.blue,
-                        ),
-                      ],
-                    ),
+                  const StatPageText(
+                    content: 'STATUS',
+                    size: 35,
                   ),
                   const Column(
                     children: [
-                      Text(
-                        "5",
-                        style: TextStyle(
-                          fontSize: 48,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          shadows: [
-                            Shadow(
-                              blurRadius: 25.0,
-                              offset: Offset(0, 0),
-                              color: Colors.blue,
-                            ),
-                          ],
-                        ),
+                      StatPageText(
+                        content: '5',
+                        size: 48,
                       ),
-                      Text(
-                        "LEVEL",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          shadows: [
-                            Shadow(
-                              blurRadius: 25.0,
-                              offset: Offset(0, 0),
-                              color: Colors.blue,
-                            ),
-                          ],
-                        ),
+                      // Text(
+                      //   "LEVEL",
+                      //   style: TextStyle(
+                      //     fontSize: 20,
+                      //     color: Colors.white,
+                      //     fontWeight: FontWeight.bold,
+                      //     shadows: [
+                      //       Shadow(
+                      //         blurRadius: 25.0,
+                      //         offset: Offset(0, 0),
+                      //         color: Colors.blue,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      StatPageText(
+                        content: 'LEVEL',
+                        size: 20,
                       ),
                     ],
                   ),
@@ -117,7 +100,7 @@ class StatusPage extends StatelessWidget {
                           color: const Color.fromARGB(255, 170, 183, 206)),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Column(
+                    child: const Column(
                       children: [
                         const SizedBox(height: 10),
                         _buildStatRow(
@@ -145,6 +128,40 @@ class StatusPage extends StatelessWidget {
                             label: "INTELLIGENCE",
                             value: 30,
                             imagePath: "assets/images/logos/int-logo.png"),
+                        SizedBox(height: 10),
+                        StatRowElement(
+                          imagePath: "assets/images/logos/dumbell-logo.png",
+                          label: 'STRENGTH',
+                          value: 30,
+                        ),
+                        SizedBox(height: 10),
+                        StatRowElement(
+                          label: 'AGILITY',
+                          value: 20,
+                          imagePath: "assets/images/logos/agility-logo.png",
+                        ),
+                        SizedBox(height: 10),
+                        StatRowElement(
+                          label: 'PRECEPTION',
+                          value: 35,
+                          imagePath: 'assets/images/logos/perception-logo.png',
+                        ),
+                        SizedBox(height: 10),
+                        StatRowElement(
+                          label: 'VIT',
+                          value: 28,
+                          imagePath: "assets/images/logos/vit-logo.png",
+                        ),
+                        SizedBox(height: 10),
+                        // _buildStatRow(
+                        //     label: "INTELLIGENCE",
+                        //     value: 30,
+                        //     imagePath: "assets/images/logos/int-logo.png"),
+                        StatRowElement(
+                          label: 'INTELLIGENCE',
+                          value: 30,
+                          imagePath: "assets/images/logos/int-logo.png",
+                        ),
                       ],
                     ),
                   ),
@@ -154,19 +171,6 @@ class StatusPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildStatRow(
-      {required String label, required int value, required String imagePath}) {
-    return Row(
-      children: [
-        Image.asset(imagePath, width: 24, height: 24),
-        const SizedBox(width: 10),
-        Expanded(
-          child: StatRow(label: label, value: value),
-        ),
-      ],
     );
   }
 }
