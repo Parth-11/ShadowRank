@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../screens/util_status/StatBar.dart';
-import '../screens/util_status/StatRow.dart';
+import 'util_status/stat_bar.dart';
+import 'util_status/stat_row.dart';
 
 class StatusPage extends StatelessWidget {
   static const String id = 'Status Page';
@@ -27,7 +27,7 @@ class StatusPage extends StatelessWidget {
             child: Container(
               height: 600,
               width: MediaQuery.of(context).size.width * 1,
-              padding: EdgeInsets.all(30),
+              padding: const EdgeInsets.all(30),
               decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.7),
                 borderRadius: BorderRadius.circular(10),
