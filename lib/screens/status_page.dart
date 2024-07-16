@@ -1,7 +1,7 @@
 import 'package:architect_system_app/components/StatsPage/stat_page_text.dart';
+import 'package:architect_system_app/components/StatsPage/stat_row_element.dart';
 import 'package:flutter/material.dart';
 import 'util_status/stat_bar.dart';
-import 'util_status/stat_row.dart';
 
 class StatusPage extends StatelessWidget {
   static const String id = 'Status Page';
@@ -115,34 +115,55 @@ class StatusPage extends StatelessWidget {
                           color: const Color.fromARGB(255, 170, 183, 206)),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Column(
+                    child: const Column(
                       children: [
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "STRENGTH",
-                            value: 30,
-                            imagePath: "assets/images/logos/dumbell-logo.png"),
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "AGILITY",
-                            value: 20,
-                            imagePath: "assets/images/logos/agility-logo.png"),
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "PERCEPTION",
-                            value: 35,
-                            imagePath:
-                                "assets/images/logos/perception-logo.png"),
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "VIT",
-                            value: 28,
-                            imagePath: "assets/images/logos/vit-logo.png"),
-                        const SizedBox(height: 10),
-                        _buildStatRow(
-                            label: "INTELLIGENCE",
-                            value: 30,
-                            imagePath: "assets/images/logos/int-logo.png"),
+                        SizedBox(height: 10),
+                        StatRowElement(
+                          imagePath: "assets/images/logos/dumbell-logo.png",
+                          label: 'STRENGTH',
+                          value: 30,
+                        ),
+                        SizedBox(height: 10),
+                        // _buildStatRow(
+                        //     label: "AGILITY",
+                        //     value: 20,
+                        //     imagePath: "assets/images/logos/agility-logo.png"),
+                        StatRowElement(
+                          label: 'AGILITY',
+                          value: 20,
+                          imagePath: "assets/images/logos/agility-logo.png",
+                        ),
+                        SizedBox(height: 10),
+                        // _buildStatRow(
+                        //     label: "PERCEPTION",
+                        //     value: 35,
+                        //     imagePath:
+                        //         "assets/images/logos/perception-logo.png"),
+                        StatRowElement(
+                          label: 'PRECEPTION',
+                          value: 35,
+                          imagePath: 'assets/images/logos/perception-logo.png',
+                        ),
+                        SizedBox(height: 10),
+                        // _buildStatRow(
+                        //     label: "VIT",
+                        //     value: 28,
+                        //     imagePath: "assets/images/logos/vit-logo.png"),
+                        StatRowElement(
+                          label: 'VIT',
+                          value: 28,
+                          imagePath: "assets/images/logos/vit-logo.png",
+                        ),
+                        SizedBox(height: 10),
+                        // _buildStatRow(
+                        //     label: "INTELLIGENCE",
+                        //     value: 30,
+                        //     imagePath: "assets/images/logos/int-logo.png"),
+                        StatRowElement(
+                          label: 'INTELLIGENCE',
+                          value: 30,
+                          imagePath: "assets/images/logos/int-logo.png",
+                        ),
                       ],
                     ),
                   ),
@@ -152,19 +173,6 @@ class StatusPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildStatRow(
-      {required String label, required int value, required String imagePath}) {
-    return Row(
-      children: [
-        Image.asset(imagePath, width: 24, height: 24),
-        const SizedBox(width: 10),
-        Expanded(
-          child: StatRow(label: label, value: value),
-        ),
-      ],
     );
   }
 }
