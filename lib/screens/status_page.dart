@@ -44,21 +44,6 @@ class StatusPage extends StatelessWidget {
                   ),
                   const Column(
                     children: [
-                      // Text(
-                      //   "5",
-                      //   style: TextStyle(
-                      //     fontSize: 48,
-                      //     color: Colors.white,
-                      //     fontWeight: FontWeight.bold,
-                      //     shadows: [
-                      //       Shadow(
-                      //         blurRadius: 25.0,
-                      //         offset: Offset(0, 0),
-                      //         color: Colors.blue,
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
                       StatPageText(
                         content: '5',
                         size: 48,
@@ -124,31 +109,18 @@ class StatusPage extends StatelessWidget {
                           value: 30,
                         ),
                         SizedBox(height: 10),
-                        // _buildStatRow(
-                        //     label: "AGILITY",
-                        //     value: 20,
-                        //     imagePath: "assets/images/logos/agility-logo.png"),
                         StatRowElement(
                           label: 'AGILITY',
                           value: 20,
                           imagePath: "assets/images/logos/agility-logo.png",
                         ),
                         SizedBox(height: 10),
-                        // _buildStatRow(
-                        //     label: "PERCEPTION",
-                        //     value: 35,
-                        //     imagePath:
-                        //         "assets/images/logos/perception-logo.png"),
                         StatRowElement(
                           label: 'PRECEPTION',
                           value: 35,
                           imagePath: 'assets/images/logos/perception-logo.png',
                         ),
                         SizedBox(height: 10),
-                        // _buildStatRow(
-                        //     label: "VIT",
-                        //     value: 28,
-                        //     imagePath: "assets/images/logos/vit-logo.png"),
                         StatRowElement(
                           label: 'VIT',
                           value: 28,
