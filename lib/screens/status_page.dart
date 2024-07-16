@@ -11,6 +11,7 @@ class StatusPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text("Status"),
@@ -122,7 +123,7 @@ class StatusPage extends StatelessWidget {
                         const SizedBox(height: 10),
                         _buildStatRow(
                             label: "STRENGTH",
-                            value: 30,
+                            value: 29,
                             imagePath: "assets/images/logos/dumbell-logo.png"),
                         const SizedBox(height: 10),
                         _buildStatRow(
