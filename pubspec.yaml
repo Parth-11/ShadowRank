@@ -38,6 +38,7 @@ dependencies:
   hexcolor: ^3.0.1
   animated_background: ^2.0.0
   stroke_text: ^0.0.3
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
