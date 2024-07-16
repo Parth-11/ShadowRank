@@ -3,7 +3,6 @@ import 'package:architect_system_app/components/ProfilePage/friend_avatar.dart';
 import 'package:architect_system_app/components/ProfilePage/profile_text.dart';
 import 'package:architect_system_app/components/ProfilePage/text_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -13,14 +12,12 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        
         decoration: const BoxDecoration(
-           image: DecorationImage(
-             image: AssetImage('assets/images/profilePage_bg.png'),
-             fit:BoxFit.cover,
-           ),
+          image: DecorationImage(
+            image: AssetImage('assets/images/profilePage_bg.png'),
+            fit: BoxFit.cover,
+          ),
         ),
-        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -63,6 +60,7 @@ class ProfilePage extends StatelessWidget {
                     ProfileText(
                       content: 'Sun Jin Woo',
                       size: 30,
+                      family: 'Solo Level',
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -70,6 +68,7 @@ class ProfilePage extends StatelessWidget {
                         ProfileText(
                           content: 'Level',
                           size: 30,
+                          family: 'Solo Level',
                         ),
                         SizedBox(
                           width: 15,
@@ -77,6 +76,7 @@ class ProfilePage extends StatelessWidget {
                         ProfileText(
                           content: '20',
                           size: 20,
+                          family: 'Solo Level',
                         ),
                       ],
                     ),
@@ -114,6 +114,7 @@ class ProfilePage extends StatelessWidget {
                         const ProfileText(
                           content: 'Friends',
                           size: 20,
+                          family: 'Solo Level',
                         ),
                         const Spacer(),
                         MaterialButton(
@@ -123,6 +124,7 @@ class ProfilePage extends StatelessWidget {
                               ProfileText(
                                 content: 'See All',
                                 size: 20,
+                                family: 'Solo Level',
                               ),
                               Icon(
                                 Icons.arrow_forward_ios_rounded,

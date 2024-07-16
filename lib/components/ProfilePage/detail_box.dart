@@ -5,8 +5,16 @@ import 'package:architect_system_app/constants/ProfilePage/box_style.dart';
 class DetailBox extends StatelessWidget {
   final String heading;
   final String content;
+  final double? headingSize;
+  final double? contentSize;
 
-  const DetailBox({super.key, required this.heading, required this.content});
+  const DetailBox({
+    super.key,
+    required this.heading,
+    required this.content,
+    this.headingSize,
+    this.contentSize,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +28,11 @@ class DetailBox extends StatelessWidget {
         children: [
           ProfileText(
             content: heading,
-            size: 22,
+            size: headingSize,
           ),
           ProfileText(
             content: content,
-            size: 20,
+            size: contentSize,
           ),
         ],
       ),

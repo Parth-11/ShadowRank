@@ -4,15 +4,16 @@ import 'package:stroke_text/stroke_text.dart';
 class ProfileText extends StatelessWidget {
   final String content;
   final double? size;
+  final String? family;
 
-  const ProfileText({super.key, required this.content, this.size});
+  const ProfileText({super.key, required this.content, this.size, this.family});
 
   @override
   Widget build(BuildContext context) {
     return StrokeText(
       text: content,
       textStyle: TextStyle(
-        fontFamily: 'Solo Level',
+        fontFamily: family,
         fontSize: size,
         color: Colors.white,
       ),
