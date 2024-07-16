@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:architect_system_app/components/background.dart';
 import 'package:architect_system_app/components/button.dart';
 import 'package:architect_system_app/constants/text_box_const.dart';
