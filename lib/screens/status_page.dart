@@ -148,9 +148,3 @@ class StatusPage extends StatelessWidget {
     );
   }
 }
-
-void main() {
-  runApp(const MaterialApp(
-    home: StatusPage(),
-  ));
-}
