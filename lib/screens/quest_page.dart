@@ -29,8 +29,11 @@ class QuestPage extends StatelessWidget {
                   height: 50,
                   width: 400,
                   decoration: const BoxDecoration(
-                    border: Border.symmetric(vertical: BorderSide())
-                  ),
+                      border: Border.symmetric(
+                          vertical: BorderSide(
+                    width: 10,
+                    color: Colors.black,
+                  ))),
                   child: ListTile(
                     title: const Row(
                       children: [
