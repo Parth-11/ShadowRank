@@ -5,6 +5,7 @@ import 'package:architect_system_app/constants/text_box_const.dart';
 import 'package:architect_system_app/screens/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegistrationPage extends StatefulWidget {
   static const String id = 'Registration Page';
@@ -21,6 +22,18 @@ class _RegistrationPageState extends State<RegistrationPage> {
   String userName = '';
   String password = '';
   int age = 0;
+
+  late SharedPreferences prefs;
+
+  @override
+  void initState() {
+    super.initState();
+    initSharedPref();
+  }
+
+  void initSharedPref() async {
+    prefs = await SharedPreferences.getInstance();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +90,21 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           'age': age,
                           'email': email
                         }));
-                    print(response.statusCode);
-                    print(response.body);
                     if (response.statusCode == 200) {
                       await Future.delayed(const Duration(seconds: 2));
+                      var jwt = await http.post(
+                          Uri.parse(
+                              'http://192.168.29.78:8080/api/v1/player/login'),
+                          headers: <String, String>{
+                            'Content-Type': 'application/json; charset=UTF-8',
+                          },
+                          body: jsonEncode(
+                            {
+                              'username': userName,
+                              'password': password,
+                            },
+                          ));
+                      prefs.setString('Token', jwt.body);
                       if (!context.mounted) return;
                       Navigator.popAndPushNamed(context, MainScreen.id);
                     }

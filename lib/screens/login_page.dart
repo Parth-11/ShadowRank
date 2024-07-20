@@ -6,6 +6,7 @@ import 'package:architect_system_app/screens/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   static const id = 'Login Page';
@@ -21,6 +22,18 @@ class _LoginPageState extends State<LoginPage> {
 
   String userName = '';
   String password = '';
+
+  late SharedPreferences prefs;
+
+  @override
+  void initState() {
+    super.initState();
+    initSharedPref();
+  }
+
+  void initSharedPref() async {
+    prefs = await SharedPreferences.getInstance();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,6 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                     );
                     if (response.statusCode == 200) {
                       await Future.delayed(const Duration(seconds: 1));
+                      prefs.setString('Token', response.body);
                       if (!context.mounted) return;
                       Navigator.popAndPushNamed(context, MainScreen.id);
                     } else {
