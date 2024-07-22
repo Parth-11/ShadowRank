@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class TaskTile extends StatefulWidget {
+  final String task;
+  final String taskQuantity;
   const TaskTile({
     super.key,
+    required this.task,
+    required this.taskQuantity,
   });
 
   @override
@@ -30,13 +34,13 @@ class _TaskTileState extends State<TaskTile> {
         ),
         child: Center(
           child: ListTile(
-            title: const Row(
+            title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TaskText(content: 'Gym'),
-                Spacer(),
+                TaskText(content: widget.task),
+                const Spacer(),
                 TaskText(
-                  content: '60min',
+                  content: widget.taskQuantity,
                 ),
               ],
             ),

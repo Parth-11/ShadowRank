@@ -29,7 +29,7 @@ class QuestPage extends StatelessWidget {
                   //Text and buttons
                   const Row(),
                   const Divider(),
-                  const TaskTile(),
+                  const TaskTile(task: 'Gym',taskQuantity: '60min',),
                 ],
               ),
             ),
