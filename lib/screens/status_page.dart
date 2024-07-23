@@ -41,6 +41,7 @@ class StatusPage extends StatelessWidget {
                   const StatPageText(
                     content: 'STATUS',
                     size: 35,
+                    weight: FontWeight.bold,
                   ),
                   const Column(
                     children: [
