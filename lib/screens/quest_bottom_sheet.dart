@@ -21,77 +21,75 @@ class _QuestBottomSheetState extends State<QuestBottomSheet> {
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(25), topRight: Radius.circular(25)),
         ),
-        child: Expanded(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Quest Builder',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.lightBlueAccent,
-                  ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Quest Builder',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.lightBlueAccent,
                 ),
-                TextField(
-                  autofocus: true,
-                  textAlign: TextAlign.center,
-                  onChanged: (newText) {
-                    // newTaskTitle = newText;
-                  },
+              ),
+              TextField(
+                autofocus: true,
+                textAlign: TextAlign.center,
+                onChanged: (newText) {
+                  // newTaskTitle = newText;
+                },
+              ),
+              TextField(
+                autofocus: true,
+                textAlign: TextAlign.center,
+                onChanged: (newText) {
+                  // newTaskTitle = newText;
+                },
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: DropdownMenu(
+                    onSelected: (value) {
+                      setState(() {
+                        attributeType = value!;
+                      });
+                    },
+                    dropdownMenuEntries:
+                        list.map<DropdownMenuEntry<String>>((String value) {
+                      return DropdownMenuEntry(value: value, label: value);
+                    }).toList()),
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  // Provider.of<TaskData>(context, listen: false)
+                  //     .addTask(newTaskTitle);
+                  // Navigator.pop(context);
+                },
+                style: const ButtonStyle(
+                    backgroundColor:
+                        MaterialStatePropertyAll<Color>(Colors.lightBlue)),
+                child: const Text(
+                  'Add Task',
+                  style: TextStyle(color: Colors.white),
                 ),
-                TextField(
-                  autofocus: true,
-                  textAlign: TextAlign.center,
-                  onChanged: (newText) {
-                    // newTaskTitle = newText;
-                  },
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  // Provider.of<TaskData>(context, listen: false)
+                  //     .addTask(newTaskTitle);
+                  Navigator.pop(context);
+                },
+                style: const ButtonStyle(
+                    backgroundColor:
+                        MaterialStatePropertyAll<Color>(Colors.lightBlue)),
+                child: const Text(
+                  'Complete Quest',
+                  style: TextStyle(color: Colors.white),
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: DropdownMenu(
-                      onSelected: (value) {
-                        setState(() {
-                          attributeType = value!;
-                        });
-                      },
-                      dropdownMenuEntries:
-                          list.map<DropdownMenuEntry<String>>((String value) {
-                        return DropdownMenuEntry(value: value, label: value);
-                      }).toList()),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    // Provider.of<TaskData>(context, listen: false)
-                    //     .addTask(newTaskTitle);
-                    // Navigator.pop(context);
-                  },
-                  style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll<Color>(Colors.lightBlue)),
-                  child: const Text(
-                    'Add Task',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    // Provider.of<TaskData>(context, listen: false)
-                    //     .addTask(newTaskTitle);
-                    Navigator.pop(context);
-                  },
-                  style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll<Color>(Colors.lightBlue)),
-                  child: const Text(
-                    'Complete Quest',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
