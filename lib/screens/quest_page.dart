@@ -16,7 +16,7 @@ class QuestPage extends StatelessWidget {
           ),
           //Quest Container
           SizedBox(
-            height: double.infinity,
+            height: 100,
             width: double.infinity,
             child: Row(
               children: [
