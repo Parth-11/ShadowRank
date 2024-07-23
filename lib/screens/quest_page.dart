@@ -19,12 +19,11 @@ class _QuestPageState extends State<QuestPage> {
           showModalBottomSheet(
               context: context,
               isScrollControlled: true,
-              builder: (BuildContext context) => SingleChildScrollView(
-                    child: Container(
-                      padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).viewInsets.bottom),
-                      child: const QuestBottomSheet(),
-                    ),
+              builder: (BuildContext context) => Container(
+                    padding: EdgeInsets.only(
+                        bottom: MediaQuery.of(context).viewInsets.bottom),
+                    // height: MediaQuery.sizeOf(context).height * (2 / 3),
+                    child: const QuestBottomSheet(),
                   ));
         },
         child: const Icon(Icons.edit),
