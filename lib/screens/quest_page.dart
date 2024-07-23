@@ -1,6 +1,7 @@
 import "package:architect_system_app/components/QuestPage/task_tile.dart";
 import "package:architect_system_app/screens/quest_bottom_sheet.dart";
 import "package:flutter/material.dart";
+import "package:hexcolor/hexcolor.dart";
 
 class QuestPage extends StatefulWidget {
   static const String id = 'Quest Page';
@@ -11,6 +12,7 @@ class QuestPage extends StatefulWidget {
 }
 
 class _QuestPageState extends State<QuestPage> {
+  bool questCompleted = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +43,7 @@ class _QuestPageState extends State<QuestPage> {
               height: double.infinity,
               width: double.infinity,
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   //Quest info box
@@ -74,6 +76,49 @@ class _QuestPageState extends State<QuestPage> {
                   const TaskTile(
                     task: 'Gym',
                     taskQuantity: '60min',
+                  ),
+                  const TaskTile(
+                    task: 'Gym',
+                    taskQuantity: '60min',
+                  ),
+                  const TaskTile(
+                    task: 'Gym',
+                    taskQuantity: '60min',
+                  ),
+                  const TaskTile(
+                    task: 'Gym',
+                    taskQuantity: '60min',
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Container(
+                    color: HexColor('4355F5').withOpacity(0.28),
+                    child: Center(
+                      child: Column(
+                        children: [
+                          const Text(
+                            'Warning: Failure to complete daily quest will result in an appropriate penalty',
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const Text('Time left'),
+                          Transform.scale(
+                            scale: 2,
+                            child: Theme(
+                              data: ThemeData.dark(),
+                              child: Checkbox(
+                                value: questCompleted,
+                                onChanged: null,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
