@@ -37,7 +37,6 @@ class _QuestPageState extends State<QuestPage> {
           ),
           //Quest Container
           SafeArea(
-           
             child: SizedBox(
               height: double.infinity,
               width: double.infinity,
@@ -52,22 +51,22 @@ class _QuestPageState extends State<QuestPage> {
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.7),
                       borderRadius: BorderRadius.circular(8.0),
-                     ),
-                     child: const Text(
+                    ),
+                    child: const Text(
                       "QUESTS",
                       style: TextStyle(
                         fontSize: 35,
-                         color: Colors.white,
-                         fontWeight: FontWeight.bold,
-                         shadows: [
-                        Shadow(
-                          blurRadius: 25.0,
-                          offset: Offset(0, 0),
-                          color: Colors.blue,
-                        ),
-                      ],
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 25.0,
+                            offset: Offset(0, 0),
+                            color: Colors.blue,
+                          ),
+                        ],
                       ),
-                     ),
+                    ),
                   ),
                   //Text and buttons
                   const Row(),
