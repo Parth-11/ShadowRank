@@ -1,3 +1,4 @@
+import 'package:architect_system_app/constants/QuestPage/text_box.dart';
 import 'package:flutter/material.dart';
 import 'package:architect_system_app/constants/QuestPage/attribute_type_list.dart';
 
@@ -24,7 +25,7 @@ class _QuestBottomSheetState extends State<QuestBottomSheet> {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
                 'Quest Builder',
@@ -34,23 +35,51 @@ class _QuestBottomSheetState extends State<QuestBottomSheet> {
                   color: Colors.lightBlueAccent,
                 ),
               ),
-              TextField(
-                autofocus: true,
-                textAlign: TextAlign.center,
-                onChanged: (newText) {
-                  // newTaskTitle = newText;
-                },
+              const SizedBox(
+                height: 20,
               ),
               TextField(
                 autofocus: true,
                 textAlign: TextAlign.center,
+                decoration:
+                    questFieldDecoration.copyWith(hintText: 'Enter Quest Name'),
                 onChanged: (newText) {
                   // newTaskTitle = newText;
                 },
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextField(
+                autofocus: true,
+                textAlign: TextAlign.center,
+                decoration:
+                    questFieldDecoration.copyWith(hintText: 'Enter Quantity'),
+                onChanged: (newText) {
+                  // newTaskTitle = newText;
+                },
+              ),
+              const SizedBox(
+                height: 20,
               ),
               Align(
                 alignment: Alignment.center,
                 child: DropdownMenu(
+                    menuStyle: MenuStyle(
+                      backgroundColor: WidgetStatePropertyAll(
+                        Colors.grey.shade400,
+                      ),
+                    ),
+                    inputDecorationTheme: const InputDecorationTheme(
+                      filled: true,
+                      // focusColor: Colors.black38,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(8),
+                        ),
+                      ),
+                    ),
                     onSelected: (value) {
                       setState(() {
                         attributeType = value!;
@@ -61,6 +90,10 @@ class _QuestBottomSheetState extends State<QuestBottomSheet> {
                       return DropdownMenuEntry(value: value, label: value);
                     }).toList()),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              // const Spacer(),
               OutlinedButton(
                 onPressed: () {
                   // Provider.of<TaskData>(context, listen: false)
@@ -69,7 +102,7 @@ class _QuestBottomSheetState extends State<QuestBottomSheet> {
                 },
                 style: const ButtonStyle(
                     backgroundColor:
-                        MaterialStatePropertyAll<Color>(Colors.lightBlue)),
+                        WidgetStatePropertyAll<Color>(Colors.lightBlue)),
                 child: const Text(
                   'Add Task',
                   style: TextStyle(color: Colors.white),
@@ -83,7 +116,7 @@ class _QuestBottomSheetState extends State<QuestBottomSheet> {
                 },
                 style: const ButtonStyle(
                     backgroundColor:
-                        MaterialStatePropertyAll<Color>(Colors.lightBlue)),
+                        WidgetStatePropertyAll<Color>(Colors.lightBlue)),
                 child: const Text(
                   'Complete Quest',
                   style: TextStyle(color: Colors.white),
