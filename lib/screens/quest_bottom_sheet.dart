@@ -14,11 +14,11 @@ class _QuestBottomSheetState extends State<QuestBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black54,
+      //color: Colors.black54,
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.lightBlueAccent.withOpacity(0.3),
+          color: Color.fromARGB(212, 11, 35, 68),
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(25), topRight: Radius.circular(25)),
         ),
