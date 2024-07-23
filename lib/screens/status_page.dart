@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'util_status/stat_bar.dart';
 import 'util_status/stat_row.dart';
-
 class StatusPage extends StatelessWidget {
   static const String id = 'Status Page';
 
