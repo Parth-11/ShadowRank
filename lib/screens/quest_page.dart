@@ -1,4 +1,5 @@
 import "package:architect_system_app/components/QuestPage/task_tile.dart";
+import "package:architect_system_app/screens/quest_bottom_sheet.dart";
 import "package:flutter/material.dart";
 
 class QuestPage extends StatefulWidget {
@@ -17,21 +18,14 @@ class _QuestPageState extends State<QuestPage> {
         onPressed: () {
           showModalBottomSheet(
               context: context,
-              builder: (BuildContext context) {
-                return Center(
-                  child: Column(
-                    children: [
-                      const Text('Quest builder'),
-                      const TextField(),
-                      const TextField(),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: const Text('Add to Quest List'),
-                      )
-                    ],
-                  ),
-                );
-              });
+              isScrollControlled: true,
+              builder: (BuildContext context) => SingleChildScrollView(
+                    child: Container(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: const QuestBottomSheet(),
+                    ),
+                  ));
         },
         child: const Icon(Icons.edit),
       ),
