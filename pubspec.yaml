@@ -38,6 +38,7 @@ dependencies:
   hexcolor: ^3.0.1
   animated_background: ^2.0.0
   stroke_text: ^0.0.3
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,15 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/WelcomeScreen_image.png
+    - assets/images/system_background_image.gif
+    - assets/images/status-bg.jpeg
+    - assets/images/bg_stats.jpeg
+    - assets/images/logos/agility-logo.png
+    - assets/images/logos/dumbell-logo.png
+    - assets/images/logos/perception-logo.png
+    - assets/images/logos/vit-logo.png
+    - assets/images/logos/int-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -85,6 +95,13 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+    - family: RobotoSlab
+      fonts:
+        - asset: assets/fonts/RobotoSlab-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/RobotoSlab-Bold.ttf
+          weight: 700
+
+  
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

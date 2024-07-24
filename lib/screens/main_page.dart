@@ -1,6 +1,8 @@
 import 'package:architect_system_app/components/background.dart';
+import 'package:architect_system_app/screens/quest_page.dart';
 import 'package:flutter/material.dart';
 import 'package:architect_system_app/screens/profile_page.dart';
+import "package:architect_system_app/screens/status_page.dart";
 
 class MainScreen extends StatefulWidget {
   static const String id = 'Main Screen';
@@ -20,8 +22,8 @@ class _MainScreenState extends State<MainScreen> {
 
   static const List<Widget> _pages = [
     ProfilePage(),
-    Column(),
-    Column(),
+    QuestPage(),
+    StatusPage(),
   ];
 
   @override
