@@ -9,7 +9,7 @@ class EditAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CHOOSE avatars '),
+        title: const Text('CHOOSE avatars '),
       ),
       body: Stack(
         children: [
@@ -22,7 +22,7 @@ class EditAvatar extends StatelessWidget {
           Positioned.fill(
             child: Column(
               children: [
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 const Text(
                   'CHOOSE AVATARS',
                   style: TextStyle(
@@ -31,7 +31,7 @@ class EditAvatar extends StatelessWidget {
                     color: Colors.white,
                     shadows: [
                       Shadow(
-                        blurRadius:20,
+                        blurRadius: 20,
                         color: Color.fromARGB(255, 96, 129, 174),
                         offset: Offset(0, 2),
                       ),

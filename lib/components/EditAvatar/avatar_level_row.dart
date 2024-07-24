@@ -4,7 +4,7 @@ import 'avatar_image_paths.dart';
 class AvatarLevelRow extends StatelessWidget {
   final int level;
 
-  AvatarLevelRow({required this.level});
+  const AvatarLevelRow({super.key,required this.level});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +15,15 @@ class AvatarLevelRow extends StatelessWidget {
         children: [
           Text(
             'LEVEL $level',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Expanded(
-            child: Container(
+            child: SizedBox(
               height: 80, // Adjust height as needed
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
