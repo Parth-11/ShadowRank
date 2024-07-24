@@ -1,3 +1,4 @@
+import 'package:architect_system_app/components/ProfilePage/avatar_element.dart';
 import 'package:architect_system_app/components/ProfilePage/detail_box.dart';
 import 'package:architect_system_app/components/ProfilePage/friend_avatar.dart';
 import 'package:architect_system_app/components/ProfilePage/profile_text.dart';
@@ -37,15 +38,7 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                //change the profile avatar
-              },
-              child: const CircleAvatar(
-                radius: 80,
-                child: Image(image: AssetImage('assets/images/Avatar.png')),
-              ),
-            ),
+            const AvatarElement(),
             Padding(
               padding: const EdgeInsets.only(top: 12.0),
               child: Container(

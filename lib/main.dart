@@ -1,3 +1,4 @@
+import 'package:architect_system_app/screens/edit_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:architect_system_app/screens/welcome_screen.dart';
 import 'package:architect_system_app/screens/login_page.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         LoginPage.id: (context) => const LoginPage(),
         RegistrationPage.id: (context) => const RegistrationPage(),
         MainScreen.id: (context) => const MainScreen(),
+        EditAvatar.id: (context) => const EditAvatar(),
       },
     );
   }
