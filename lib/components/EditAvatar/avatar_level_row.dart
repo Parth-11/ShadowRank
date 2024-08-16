@@ -4,7 +4,7 @@ import 'avatar_image_paths.dart';
 class AvatarLevelRow extends StatelessWidget {
   final int level;
 
-  const AvatarLevelRow({super.key, required this.level});
+  const AvatarLevelRow({super.key,required this.level});
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +24,16 @@ class AvatarLevelRow extends StatelessWidget {
           const SizedBox(width: 10),
           Expanded(
             child: Container(
-              height: 80,
+              height: 80, 
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 13,
+                itemCount: 10, 
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: CircleAvatar(
-                      radius: 30,
-                      backgroundImage:
-                          AssetImage('assets/images/avatars/Alicia_Blanche.png'),
-                      onBackgroundImageError: (exception, stackTrace) {
-                        print('Error loading image: $exception');
-                      },
+                      radius: 30, 
+                      backgroundImage: AssetImage(avatarImagePaths[index]), 
                     ),
                   );
                 },
