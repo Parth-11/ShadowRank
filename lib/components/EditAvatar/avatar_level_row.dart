@@ -33,7 +33,7 @@ class AvatarLevelRow extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: CircleAvatar(
                       radius: 30, 
-                      backgroundImage: AssetImage('assets/avatar_${level}_${index + 1}.png'), 
+                      backgroundImage: AssetImage(avatarImagePaths[index]), 
                     ),
                   );
                 },

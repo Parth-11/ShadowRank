@@ -1,0 +1,17 @@
+final List<String> avatarImagePaths = [
+  "assets/images/avatars/Alicia_Blanche.png",
+  "assets/images/avatars/BaekYoonho.png",
+  "assets/images/avatars/ChaHae-In.png",
+  "assets/images/avatars/ChoiJong-in.png",
+  "assets/images/avatars/Discord_CrankSungJinwoo.png",
+  "assets/images/avatars/HanSong-Yi.png",
+  "assets/images/avatars/KangTaeshik.png",
+  "assets/images/avatars/LeeBora.png",
+  "assets/images/avatars/LeeJoohee.png",
+  "assets/images/avatars/LimTae-Gyu.png",
+  "assets/images/avatars/Meilin_Fisher.png",
+  "assets/images/avatars/ParkHeejin.png",
+  "assets/images/avatars/SungJinwoo.png",
+  "assets/images/avatars/YooSoohyun.png",
+  "assets/images/avatars/YooJinho.png",
+];
