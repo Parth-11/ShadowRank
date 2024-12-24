@@ -44,36 +44,68 @@ class WelcomeScreen extends StatelessWidget {
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus volutpat bibendum. Phasellus condimentum arcu sit amet nibh convallis mattis. Duis orci dui, bibendum in ultricies at, ultricies rhoncus lorem. Fusce et dignissim nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;"),
                 ],
               ),
-              SizedBox(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 15),
-                  child: Stack(
-                    alignment: Alignment.centerLeft,
-                    children: [
-                      Positioned(
-                        left: 160,
-                        child: Button(
-                          buttonText: 'Register',
-                          onPress: () {
-                            Navigator.pushNamed(context, RegistrationPage.id);
-                          },
-                        ),
-                      ),
-                      Button(
-                        buttonText: 'Login',
-                        onPress: () {
-                          Navigator.pushNamed(context, LoginPage.id);
-                        },
-                        buttonColor: Colors.cyan,
-                      ),
-                    ],
-                  ),
-                ),
-              )
+              // SizedBox(
+              //   width: double.infinity,
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(left: 15),
+              //     child: Stack(
+              //       alignment: Alignment.centerLeft,
+              //       children: [
+              //         Positioned(
+              //           left: 160,
+              //           child: Button(
+              //             buttonText: 'Register',
+              //             onPress: () {
+              //               Navigator.pushNamed(context, RegistrationPage.id);
+              //             },
+              //           ),
+              //         ),
+              //         Button(
+              //           buttonText: 'Login',
+              //           onPress: () {
+              //             Navigator.pushNamed(context, LoginPage.id);
+              //           },
+              //           buttonColor: Colors.cyan,
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // )
+              const Btn()
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Btn extends StatelessWidget {
+  const Btn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Button(
+              buttonColor: Colors.blue,
+              buttonText: 'buttonText',
+              onPress: () {},
+            ),
+          ),
+          Expanded(
+            child: Button(
+              buttonText: 'buttonText',
+              onPress: () {},
+            ),
+          )
+        ],
       ),
     );
   }
